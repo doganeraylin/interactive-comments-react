@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-
 const Comment = (
     {content,
     createdAt,
