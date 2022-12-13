@@ -21,11 +21,13 @@ body {
     border-radius: 7px;
     padding: 1.5em;
     margin: 1em auto;
+    /* border: 2px solid blue; */
 }
 
 .card-top-container {
     display: flex;
     justify-content: space-between;
+    /* border: 2px solid firebrick; */
 }
 
 .add-comment-container {
@@ -44,6 +46,7 @@ body {
     align-items: center;
     gap: 5px;
     margin-right: .5em;
+    /* border: 2px solid magenta; */
 }
 
 .vote-container {
@@ -56,11 +59,13 @@ body {
     height: 70px;
     border-radius: 7px;
     margin-right: 1.5em;
+    /* border: 2px solid yellow; */
 
 }
 
 .score,
-.reply-text
+.reply-text,
+.delete-text
 {
     color: hsl(238, 40%, 52%);
     font-weight: 500;
@@ -99,7 +104,7 @@ body {
 
 }
 
-.replyingTo {
+.replying-to {
     color: hsl(238, 100%, 28%);
     font-weight: 500;
 }
@@ -127,3 +132,62 @@ body {
     resize: none;
 }
 
+.you-tag {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+.delete-text {
+    color: rgb(212, 9, 9);
+}
+
+
+/* MODAL */
+
+.modal-container,
+.modal-container-open {
+    display: inline;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 30px;
+    width: 310px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #666;
+    box-shadow: 0px 0px 6px 2px #666;
+}
+
+.modal-container-open {
+    display: inline;
+}
+
+
+.modal-text {
+    margin: 15px 0;
+}
+
+.modal-buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-btns {
+    padding: 10px 22px;
+    border-radius: 5px;
+}
+
+.modal-cancel-btn {
+    background-color: blueviolet;
+    color: white;
+}
+
+.modal-delete-btn {
+    background-color: rgb(218, 33, 33);
+    color: white;
+}
