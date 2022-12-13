@@ -2,8 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import data from "./data"
 import Comment from './components/Comment'
-import Reply from './components/Reply'
 import AddComment from './components/AddComment'
+import Reply from './components/Reply'
+import DeleteModal from './components/DeleteModal'
 
 function App() {
   return(
