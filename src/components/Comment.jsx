@@ -1,4 +1,5 @@
 import { useState } from "react"
+import AddReply from "./AddReply"
 
 const Comment = (
     {content,
@@ -10,6 +11,8 @@ const Comment = (
     }
 ) => {
 
+    const [isReply, setIsReply] = useState(false)
+
     const [newScore, setNewScore] = useState(counter)
 
     function incrementScore() {
@@ -19,6 +22,11 @@ const Comment = (
     function decrementScore() {
         return setNewScore((prevScore) => prevScore - 1)
     }
+
+    function clickReply () {
+       setIsReply(true)
+    }
+
 
     return (
     <>
@@ -37,15 +45,15 @@ const Comment = (
                 </div>
                 <div className="reply-btn-container">
                     <img src="../../public/images/icon-reply.svg" className="reply-icon"></img>
-                    <p className="reply-text">Reply</p>
+                    <p className="reply-text" onClick={clickReply}>Reply</p>
                 </div>
             </div>
             <div className="card-text">
                 <p className="content">{content}</p>
             </div>
         </div>
-      
     </div>
+    {isReply && <AddReply />}
     </>
     )
 }
