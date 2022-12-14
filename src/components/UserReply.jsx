@@ -29,20 +29,20 @@ const UserReply = (
     return (
     <>
         <div className="card-container">
-            <div className="vote-container vote-container-userreply">
+            <div className="vote-container">
                 <p className="vote" onClick={incrementScore}>+</p>
                 <p className="score">{newScore}</p>
                 <p className="vote" onClick={decrementScore}>-</p>
             </div>
             <div className="card-content">
-                <div className="card-top-container ">
+                <div className="card-top-container">
                     <div className="card-top-info">  
                         <img src={img} className="icon"></img>
                         <p className="username">{username}</p>
                         <p className="you-tag">you</p>
                         <p className="createdAt"><ReactTimeAgo date={new Date()} locale="en-US"/></p>
                     </div>
-                    <div className="reply-btn-container">
+                    <div className="delete-edit-container reply-btn-container">
                         <img src="../../public/images/icon-delete.svg" className="delete-icon"></img>
                         <p className="delete-text" onClick={handleToggle}>Delete</p>
                         <img src="../../public/images/icon-edit.svg" className="edit-icon"></img>
@@ -50,11 +50,10 @@ const UserReply = (
                     </div>
                 </div>
                 <div className="card-text">
-                <p className="content">{content}</p>
+                    <p className="content">{content}</p>
                 </div>
             </div>
         </div>
-        
         </>
     )
 }
