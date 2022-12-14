@@ -34,9 +34,9 @@ const AddComment = ()  => {
         setSubmittedComments(updatedComments)
     }
 
-    function handleToggle () {
+    function handleModalToggle () {
       setIsModalOpen(!isModalOpen)
-  }
+    }
 
     return (
       <>
@@ -49,7 +49,7 @@ const AddComment = ()  => {
               img={comment.img}
               username={comment.username}
               counter={comment.counter}
-              handleToggle={handleToggle}
+              handleToggle={handleModalToggle}
              />
           ))}
         </div>
@@ -57,7 +57,7 @@ const AddComment = ()  => {
         {isModalOpen && submittedComments.map((comment, index) => (
             <DeleteModal 
               key={index}
-              cancelDelete = {handleToggle}
+              cancelDelete = {handleModalToggle}
               deleteComment={() => deleteComments(comment.id)}
             />
         ))}
@@ -75,7 +75,7 @@ const AddComment = ()  => {
               value={value}
             >
             </textarea>
-            <button type="submit" className="send-btn">SEND</button>
+            <button type="submit" disabled={!value} className={!value ? "disabled-btn" : "send-btn"}>SEND</button>
           </form>
         </div>
       </>
