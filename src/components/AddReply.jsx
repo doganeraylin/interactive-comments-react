@@ -1,13 +1,18 @@
 import { useState } from "react"
 import data from "../data.json"
 import UserReply from "./UserReply"
+import DeleteModal from "./DeleteModal"
+
 
 const AddReply = ()  => {
-    // State variables
+
     const [value, setTextareaValue] = useState("")
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [comments, setComments] = useState(data.comments.slice())
     const [submittedComments, setSubmittedComments] = useState([])
+    const [isReplyOpen, setIsReplyOpen] = useState(true)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
 
     function handleSubmit(event) {
       event.preventDefault()
@@ -24,6 +29,7 @@ const AddReply = ()  => {
       setSubmittedComments([...submittedComments, newComment])
       setFormSubmitted(true)
       setTextareaValue("")
+      setIsModalOpen(false)
     }
 
     function deleteComments (id) {
@@ -31,11 +37,19 @@ const AddReply = ()  => {
         setSubmittedComments(updatedComments)
     }
 
+    function toggleReplyOpen () {
+      setIsReplyOpen(false)
+    }
+    
+    function handleModalToggle () {
+      setIsModalOpen(!isModalOpen)
+  }
+
   
     return (
       <>
         <div>
-          {submittedComments.map((comment, index) => (
+          {isReplyOpen && submittedComments.map((comment, index) => (
             <UserReply
               key={index}
               content={comment.content}
@@ -43,14 +57,23 @@ const AddReply = ()  => {
               img={comment.img}
               username={comment.username}
               counter={comment.counter}
-              deleteComments={() => deleteComments(comment.id)}
+              handleToggle={handleModalToggle}
              />
           ))}
         </div>
-  
-        <div className="card-container">
+            
+        {isModalOpen && submittedComments.map((comment, index) => (
+            <DeleteModal 
+              key={index}
+              cancelDelete = {handleModalToggle}
+              deleteComment={() => deleteComments(comment.id)}
+            />
+        ))}
+            
+        <div className={isReplyOpen ? "card-container" : "card-container-closed"}>
           <img src="../../public/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
-          <form id="add-comment-form" onSubmit={handleSubmit}>
+    
+          <form className="add-comment-form" onSubmit={handleSubmit}>
             <textarea
               id="textarea"
               className="add-comment-textarea"
@@ -61,13 +84,14 @@ const AddReply = ()  => {
               value={value}
             >
             </textarea>
-            <button type="submit" className="send-btn">REPLY</button>
+            <button type="submit"  disabled={!value} className={!value ? "disabled-btn" : "send-btn"}>REPLY</button>
           </form>
+          <p className="cancel-reply-icon" onClick={toggleReplyOpen}>x</p>
         </div>
       </>
     )
   }
-  
+ 
   export default AddReply
   
 

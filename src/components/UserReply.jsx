@@ -1,5 +1,6 @@
 import { useState } from "react"
-import DeleteModal from "./DeleteModal"
+import React from 'react'
+import ReactTimeAgo from 'react-time-ago'
 
 const UserReply = (
     {content,
@@ -8,7 +9,8 @@ const UserReply = (
     username,
     counter,
     replyingTo,
-    handleToggle
+    handleToggle,
+    date
    }
 ) => {
 
@@ -38,7 +40,7 @@ const UserReply = (
                         <img src={img} className="icon"></img>
                         <p className="username">{username}</p>
                         <p className="you-tag">you</p>
-                        <p className="createdAt">2 days ago</p>
+                        <p className="createdAt"><ReactTimeAgo date={new Date()} locale="en-US"/></p>
                     </div>
                     <div className="reply-btn-container">
                         <img src="../../public/images/icon-delete.svg" className="delete-icon"></img>

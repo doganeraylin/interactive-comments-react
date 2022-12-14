@@ -1,10 +1,15 @@
-import { useState } from 'react'
 import './App.css'
 import data from "./data"
 import Comment from './components/Comment'
 import AddComment from './components/AddComment'
 import Reply from './components/Reply'
-import DeleteModal from './components/DeleteModal'
+import TimeAgo from 'javascript-time-ago'
+import en from "javascript-time-ago/locale/en"
+import ru from "javascript-time-ago/locale/ru"
+TimeAgo.locale(en)
+TimeAgo.locale(ru)
+TimeAgo.addDefaultLocale(en)
+TimeAgo.addLocale(ru)
 
 function App() {
   return(

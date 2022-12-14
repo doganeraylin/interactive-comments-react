@@ -53,7 +53,7 @@ const Comment = (
             </div>
         </div>
     </div>
-    {isReply && <AddReply />}
+    {isReply && <AddReply/>}
     </>
     )
 }
