@@ -20,13 +20,14 @@ const AddComment = ()  => {
         username: "juliusomo",
         counter: 0
       }
-  
+
       setComments([...comments, newComment])
       setSubmittedComments([])
       setSubmittedComments([...submittedComments, newComment])
       setFormSubmitted(true)
       setTextareaValue("")
       setIsModalOpen(false) 
+     
     }
 
     function deleteComments (id) {
@@ -66,8 +67,7 @@ const AddComment = ()  => {
           <img src="../../public/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
           <form id="add-comment-form" onSubmit={handleSubmit}>
             <textarea
-              id="textarea"
-              className="add-comment-textarea"
+              className="textarea"
               cols="50"
               rows="4"
               placeholder="Add a comment..."
