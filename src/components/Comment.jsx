@@ -44,7 +44,7 @@ const Comment = (
                     <p className="createdAt">{createdAt}</p>
                 </div>
                 <div className="reply-btn-container">
-                    <img src="../../public/images/icon-reply.svg" className="reply-icon"></img>
+                    <img src="/images/icon-reply.svg" className="reply-icon"></img>
                     <p className="reply-text" onClick={clickReply}>Reply</p>
                 </div>
             </div>
