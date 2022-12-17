@@ -23,13 +23,11 @@ body {
     border-radius: 7px;
     padding: 1.5em;
     margin: 1em auto;
-    border: 2px solid blue;
 }
 
 .card-top-container {
     display: flex;
     justify-content: space-between;
-    border: 2px solid firebrick;
 }
 
 .vote-container {
@@ -42,29 +40,30 @@ body {
     height: 70px;
     border-radius: 7px;
     margin-right: 1.5em;
-    /* border: 2px solid yellow; */
 }
+
+.user-vote-container {
+    width: 33px;
+}
+
+.user-card-top-container {
+   width: 460px;
+}
+
 
 .reply-btn-container {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-right: .5em;
-    border: 2px solid magenta;
 }
 
-.delete-edit-container {
-    display: flex;
-    width: 150px;
-    border: 2px solid aqua;
-}
 
 .card-top-info {
     display: flex;
     align-items: center;
     min-width: 80%;
     gap: 10px;
-    /* border: 2px solid olive; */
 }
 
 /* SINGLE CARD ELEMENTS */
@@ -72,10 +71,11 @@ body {
 .score,
 .reply-text,
 .delete-text
-{
+{   
     color: hsl(238, 40%, 52%);
     font-weight: 500;
     cursor: pointer;
+
 }
 
 .delete-text {
@@ -88,7 +88,6 @@ body {
     opacity: 0.8;
     line-height: 1.4em;
     padding: 0 1.5em 0 0;
-    border: 2px solid salmon;
 }
 
 .username {
@@ -135,8 +134,7 @@ body {
 
 /* MODAL */
 
-.modal-container,
-.modal-container-open {
+.modal-container {
     display: inline;
     position: fixed;
     right: 0;
@@ -148,14 +146,9 @@ body {
     width: 310px;
     height: 200px;
     border-radius: 5px;
-    background-color: #666;
-    box-shadow: 0px 0px 6px 2px #666;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 6px 2px gainsboro;
 }
-
-.modal-container-open {
-    display: inline;
-}
-
 
 .modal-text {
     margin: 15px 0;
@@ -194,7 +187,7 @@ body {
 }
 
 .modal-cancel-btn {
-    background-color: blueviolet;
+    background-color: gray
 }
 
 .modal-delete-btn {
@@ -220,6 +213,7 @@ body {
     margin-left: auto;
 
 }
+
 
 /* TOGGLE */
 
