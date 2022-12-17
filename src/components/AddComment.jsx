@@ -64,7 +64,7 @@ const AddComment = ()  => {
         ))}
             
         <div className="card-container">
-          <img src="../../public/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
+          <img src="/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
           <form id="add-comment-form" onSubmit={handleSubmit}>
             <textarea
               className="textarea"

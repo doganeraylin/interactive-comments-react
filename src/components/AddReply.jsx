@@ -72,7 +72,7 @@ const AddReply = ()  => {
         ))}
             
         <div className={isReplyOpen ? "card-container" : "card-container-closed"}>
-          <img src="../../public/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
+          <img src="/images/avatars/image-juliusomo.png" className="comment-user-icon"></img>
     
           <form className="add-comment-form" onSubmit={handleSubmit}>
             <textarea
