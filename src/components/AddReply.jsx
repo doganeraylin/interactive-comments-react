@@ -19,7 +19,8 @@ const AddReply = ()  => {
   
       const newComment = {
         content: value,
-        img: "../../public/images/avatars/image-juliusomo.png",
+        img: "/images/avatars/image-juliusomo.png",
+        // img: "../../public/images/avatars/image-juliusomo.png",
         username: "Juliusomo",
         counter: 0
       }
@@ -75,8 +76,7 @@ const AddReply = ()  => {
     
           <form className="add-comment-form" onSubmit={handleSubmit}>
             <textarea
-              id="textarea"
-              className="add-comment-textarea"
+              className="textarea"
               cols="50"
               rows="4"
               placeholder="Add a comment..."
