@@ -37,7 +37,7 @@ const UserReply = (
                         <p className="you-tag">you</p>
                         <p className="createdAt"><ReactTimeAgo date={new Date()} locale="en-US"/></p>
                     </div>
-                    <div className="reply-btn-container">
+                    <div className="reply-btn-container delete-container">
                         <img src="/images/icon-delete.svg" className="delete-icon icon"></img>
                         <p className="delete-text" onClick={handleToggle}>Delete</p>
                         {/* <img src="/images/icon-edit.svg" className="edit-icon icon"></img>
