@@ -106,7 +106,6 @@ body {
     font-size: 1.3em;
     font-weight: 700;
     opacity: 0.2;
-
 }
 
 .replying-to {
@@ -221,3 +220,95 @@ body {
     display: none;
 }
 
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 540px ) {
+    .card-container {
+        max-width: 300px;
+        min-height: 120px;
+    }
+
+    .textarea {
+        width: 200px;
+    }
+
+    .vote-container{
+        width: 120px;
+        height: 60px;
+    }
+
+    .vote {
+        font-size: 1em;
+    }
+    
+    .reply-icon {
+        max-width: 10px;
+    }
+
+    .reply-text {
+        font-size: 10px;
+    }
+
+    .createdAt {
+        font-size: 10px;
+    }
+
+    .you-tag {
+        padding: 1px 4px;
+        border-radius: 2px;
+    }
+    .user-card-top-container {
+        width: 220px;
+        font-size: 10px;
+     }
+     
+}
+
+@media screen and (max-width: 400px) {
+
+    .card-container {
+        max-width: 250px;
+        min-height: 100px;
+    }
+
+    .user-card-top-container {
+        width: 200px;
+     }
+
+    .content {
+        font-size: 10px;
+    }
+
+    .username,
+    .reply-text,
+    .score,
+    .you-tag,
+    .delete-text {
+        font-size: 8px;
+    }
+
+    .createdAt {
+        font-size: 7px;
+    }
+
+    .reply-icon,
+    .delete-icon {
+        width: 8px;
+    }
+
+    .vote-container {
+        width: 120px;
+        height: 50px;
+    }
+
+    .textarea {
+        width: 180px;
+    }
+
+    .you-tag {
+        padding: 1px 3px;
+        border-radius: 2px;
+    }
+   
+ }
