@@ -13,7 +13,7 @@ TimeAgo.addLocale(ru)
 
 function App() {
   return(
-    <div>
+    <>
         {data.comments.map((comment) => {
             return (
                 <>
@@ -25,7 +25,7 @@ function App() {
                         img={comment.user.image.png}
                         counter={comment.score}
                     />
-
+                 
                     {comment.replies.map((reply) => 
                         <Reply
                             key={reply.id}
@@ -36,12 +36,13 @@ function App() {
                             counter={reply.score}
                             replyingTo={reply.replyingTo}
                         />  
-                    )}                    
+                    )}     
+                                
                 </>   
             )
         })}
         <AddComment/>
-    </div>
+    </>
   )
 }
 
