@@ -47,7 +47,8 @@ const AddComment = ()  => {
               key={index}
               content={comment.content}
               createdAt={comment.createdAt}
-              img={comment.img}
+              // img={comment.img}
+              img={"/images/avatars/image-juliusomo.png"}
               username={comment.username}
               counter={comment.counter}
               handleToggle={handleModalToggle}
